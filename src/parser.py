@@ -8,6 +8,7 @@ precedence = (
     ("left", "EQEQ", "NE", "LT", "LE", "GT", "GE"),
     ("left", "PLUS", "MINUS"),
     ("left", "TIMES", "DIVIDE"),
+    ("right", "UMINUS"),
 )
 
 start = "program"
@@ -216,6 +217,11 @@ def p_expression_id(p):
         p[0] = (var_type,)
     else:
         p[0] = (None,)
+
+
+def p_expression_unary_minus(p):
+    """expression : MINUS expression %prec UMINUS"""
+    p[0] = p[2]
 
 
 def p_expression_literals(p):
