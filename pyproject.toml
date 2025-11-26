@@ -1,0 +1,8 @@
+[project]
+name = "trabalho-final"
+version = "0.1.0"
+description = "Trabalho Final de Compiladores"
+authors = [{ name = "Dennis Paz", email = "dppazlopez@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["ply==3.11", "ruff==0.14.3"]
